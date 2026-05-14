@@ -1,0 +1,87 @@
+// A. Diagrama de Caso de Uso: focado na interação do motorista com as funcionalidades principais.
+@startuml
+left to right direction
+actor "Cliente" as C
+
+rectangle "AutoTech Care System" {
+  usecase "Cadastrar Veículo" as UC1
+  usecase "Registrar Manutenção" as UC2
+  usecase "Realizar Diagnóstico (IA)" as UC3
+  usecase "Consultar Histórico" as UC4
+}
+
+C --> UC1
+C --> UC2
+C --> UC3
+C --> UC4
+@enduml
+
+  // B. Diagrama de Classes: utilizando a hierarquia que definimos (Herança e Interface).
+  @startuml
+abstract class Carro {
+    # String modelo
+    # String placa
+    + Carro(modelo, placa)
+}
+
+interface IVerificavel {
+    + realizarCheckup()
+}
+
+class CarroBateria {
+    - int vidaUtilMeses
+    + realizarCheckup()
+}
+
+class CarroMotor {
+    - double nivelOleo
+    + realizarCheckup()
+}
+
+Carro <|-- CarroBateria
+Carro <|-- CarroMotor
+IVerificavel <|.. CarroBateria
+IVerificavel <|.. CarroMotor
+@enduml
+
+  // C. Diagrama de Sequência (Caso de Uso: Diagnóstico): este diagrama mostra a "conversa" entre os objetos quando o usuário pede um diagnóstico.
+  @startuml
+title Diagrama de Classes - AutoTech Care
+
+left to right direction
+
+' Classes principais
+abstract class Carro {
+    # modelo: String
+    # placa: String
+}
+
+class CarroBateria {
+    - vidaUtilMeses: int
+    + realizarCheckup(): String
+}
+
+class CarroMotor {
+    - nivelOleo: double
+    + realizarCheckup(): String
+}
+
+interface IVerificavel {
+    + realizarCheckup(): String
+}
+
+class HistoricoManutencao {
+    - data: Date
+    - descricao: String
+    - carro: Carro
+    + gerarRelatorio(): void
+}
+
+' Relações estruturais
+Carro <|-- CarroBateria
+Carro <|-- CarroMotor
+IVerificavel <|.. CarroBateria
+IVerificavel <|.. CarroMotor
+
+HistoricoManutencao "*" --> "1" Carro : registrado_para
+@enduml
