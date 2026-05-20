@@ -1,41 +1,21 @@
 // C. Diagrama de Sequência (Caso de Uso: Diagnóstico): este diagrama mostra a "conversa" entre os objetos quando o usuário pede um diagnóstico.
   @startuml
-title Diagrama de Classes - AutoTech Care
+actor Cliente
+participant "InterfaceApp" as UI
+participant "DiagnosticoIA" as IA
+participant "HistoricoManutencao" as Hist
 
-left to right direction
+Cliente -> UI: Relata sintoma ("Bateria fraca")
+UI -> IA: processarSintomas("Bateria fraca")
+activate IA
+IA --> UI: retorna "Trocar Bateria (Probabilidade 90%)"
+deactivate IA
 
-' Classes principais
-abstract class Carro {
-    # modelo: String
-    # placa: String
-}
+UI -> Hist: new HistoricoManutencao(Date, "Troca Sugerida")
+activate Hist
+Hist -> Hist: vincularAoCarro()
+Hist --> UI: Confirmação de salvamento
+deactivate Hist
 
-class CarroBateria {
-    - vidaUtilMeses: int
-    + realizarCheckup(): String
-}
-
-class CarroMotor {
-    - nivelOleo: double
-    + realizarCheckup(): String
-}
-
-interface IVerificavel {
-    + realizarCheckup(): String
-}
-
-class HistoricoManutencao {
-    - data: Date
-    - descricao: String
-    - carro: Carro
-    + gerarRelatorio(): void
-}
-
-' Relações estruturais
-Carro <|-- CarroBateria
-Carro <|-- CarroMotor
-IVerificavel <|.. CarroBateria
-IVerificavel <|.. CarroMotor
-
-HistoricoManutencao "*" --> "1" Carro : registrado_para
+UI -> Cliente: Exibe Diagnóstico e Salva no Histórico
 @enduml
