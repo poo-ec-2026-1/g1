@@ -1,5 +1,5 @@
-// C. Diagrama de Sequência (Caso de Uso: Diagnóstico): este diagrama mostra a "conversa" entre os objetos quando o usuário pede um diagnóstico.
-  @startuml
+// B. Diagrama de Sequência (Caso de Uso: Diagnóstico): este diagrama mostra a "conversa" entre os objetos quando o usuário pede um diagnóstico.
+@startuml
 actor Cliente
 participant "InterfaceApp" as UI
 participant "DiagnosticoIA" as IA
