@@ -1,13 +1,13 @@
 // A. Diagrama de Caso de Uso: focado na interação do motorista com as funcionalidades principais.
 @startuml
 left to right direction
-actor "Cliente" as C
+actor "Cliente (Motorista)" as C
 
 rectangle "AutoTech Care System" {
   usecase "Cadastrar Veículo" as UC1
-  usecase "Registrar Manutenção" as UC2
-  usecase "Realizar Diagnóstico (IA)" as UC3
-  usecase "Consultar Histórico" as UC4
+  usecase "Solicitar Diagnóstico IA" as UC2
+  usecase "Gerenciar Perfil de Usuário" as UC3
+  usecase "Visualizar Histórico de Consultas" as UC4
 }
 
 C --> UC1
