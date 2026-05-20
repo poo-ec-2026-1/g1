@@ -1,0 +1,41 @@
+// C. Diagrama de Sequência (Caso de Uso: Diagnóstico): este diagrama mostra a "conversa" entre os objetos quando o usuário pede um diagnóstico.
+  @startuml
+title Diagrama de Classes - AutoTech Care
+
+left to right direction
+
+' Classes principais
+abstract class Carro {
+    # modelo: String
+    # placa: String
+}
+
+class CarroBateria {
+    - vidaUtilMeses: int
+    + realizarCheckup(): String
+}
+
+class CarroMotor {
+    - nivelOleo: double
+    + realizarCheckup(): String
+}
+
+interface IVerificavel {
+    + realizarCheckup(): String
+}
+
+class HistoricoManutencao {
+    - data: Date
+    - descricao: String
+    - carro: Carro
+    + gerarRelatorio(): void
+}
+
+' Relações estruturais
+Carro <|-- CarroBateria
+Carro <|-- CarroMotor
+IVerificavel <|.. CarroBateria
+IVerificavel <|.. CarroMotor
+
+HistoricoManutencao "*" --> "1" Carro : registrado_para
+@enduml
