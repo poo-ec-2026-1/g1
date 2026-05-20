@@ -1,4 +1,7 @@
-// A. Diagrama de Caso de Uso: focado na interação do motorista com as funcionalidades principais.
+# Diagrama de Caso de Uso: 
+
+Focado na interação do motorista com as funcionalidades principais.
+
 @startuml
 left to right direction
 actor "Cliente (Motorista)" as C
