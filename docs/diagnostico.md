@@ -1,6 +1,4 @@
-# Descrição do Caso de Uso - AutoTech Care
-
-Abaixo está o detalhamento do caso de uso principal para a disciplina de POO:
+# Tabela de descrição do Caso de Uso:
 
 | Campo | Detalhes |
 | :--- | :--- |
