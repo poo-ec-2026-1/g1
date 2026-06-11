@@ -93,8 +93,16 @@ public class InterfaceApp {
 
     } while(nome.isEmpty());
 
-        System.out.print("Digite seu telefone (ex: 62 9 9999-9999): ");
-        String telefone = scanner.nextLine().trim();
+       String telefone;
+
+do {
+    System.out.print("Digite seu telefone (ex: 62 9 9999-9999): ");
+    telefone = scanner.nextLine().trim();
+
+    if(telefone.isEmpty()) {
+        System.out.println("Telefone não pode ficar vazio.");
+    }
+} while(telefone.isEmpty());
 
         Cliente cliente = new Cliente(nome, telefone);
 
