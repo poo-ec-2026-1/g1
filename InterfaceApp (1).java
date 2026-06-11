@@ -82,7 +82,17 @@ public class InterfaceApp {
         System.out.println("--- DADOS DO CLIENTE ---");
 
         System.out.print("Digite seu nome: ");
-        String nome = scanner.nextLine().trim();
+        String nome;
+
+    do {
+    System.out.print("Digite seu nome: ");
+    nome = scanner.nextLine().trim();
+
+       if(nome.isEmpty()) {
+        System.out.println("Nome não pode ficar vazio.");
+    }
+
+    } while(nome.isEmpty());
 
         System.out.print("Digite seu telefone (ex: 62 9 9999-9999): ");
         String telefone = scanner.nextLine().trim();
