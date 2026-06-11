@@ -126,9 +126,11 @@ Controller -> Carro: 5. coletarDados()
 Carro --> Controller: 6. dados (vidaUtilMeses/nivelOleo)
 Controller -> AI: 7. analisar(dados)
 AI --> Controller: 8. resultadoDiagnostico
-Controller -> Carro: 9. realizarCheckup()
-Carro --> Controller: 10. statusCheckup
-Controller -> DB: 11. salvarDiagnostico(resultado)
-Controller --> UI: 12. exibirResultado(resultado)
-UI --> Cliente: 13. Mostrar diagnóstico
-@enduml
+Controller --> UI: 9. exibirResultado(resultado)
+UI --> Cliente: 10. Mostrar diagnóstico
+Cliente -> UI: 11. Confirmar salvamento
+UI -> Controller: 12. salvarDiagnostico()
+Controller -> Carro: 13. realizarCheckup()
+Carro --> Controller: 14. statusCheckup
+
+Controller -> DB: 15. salvarDiagnostico(resultado)
