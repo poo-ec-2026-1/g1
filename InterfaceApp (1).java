@@ -64,7 +64,8 @@ public class InterfaceApp {
         System.out.println("           --- BEM-VINDO AO AUTOTECH CARE ---              ");
         System.out.println("     Gestão Automotiva Inteligente | Versão 1.0            ");
         System.out.println("============================================================");
-        System.out.println("Olá! Vamos começar o seu atendimento.");
+        System.out.println("Olá! Seja bem-vindo!");
+        System.out.println("Vamos iniciar o cadastro do cliente e do veículo.");
         System.out.println();
     }
 
