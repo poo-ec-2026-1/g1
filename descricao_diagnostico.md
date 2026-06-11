@@ -3,7 +3,7 @@
 | Campo | Descrição |
 |-------|-----------|
 | **Nome do Caso de Uso** | Realizar Diagnóstico (IA) |
-| **Ator Principal** | Cliente |
+| **Ator Principal** | Cliente ( Usuário do Sistema) |
 | **Atores Secundários** | Sistema de IA |
 | **Pré-condições** | 1. Cliente está autenticado no sistema<br>2. Cliente possui pelo menos um veículo cadastrado |
 | **Pós-condições** | 1. Diagnóstico é registrado no histórico do veículo<br>2. Relatório é gerado para o cliente |
