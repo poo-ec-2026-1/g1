@@ -81,7 +81,6 @@ public class InterfaceApp {
     private static Cliente cadastrarCliente() {
         System.out.println("--- DADOS DO CLIENTE ---");
 
-        System.out.print("Digite seu nome: ");
         String nome;
 
     do {
