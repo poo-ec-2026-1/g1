@@ -114,10 +114,10 @@ title Diagrama de Sequência - Realizar Diagnóstico (IA)
 actor Cliente
 participant "Interface" as UI
 participant "Controlador\nDiagnóstico" as Controller
-participant "Carro" as Carro
+participant "Carro" as Carro   
 participant "IA" as AI
 database "Histórico" as DB
-
+            
 Cliente -> UI: 1. Solicitar diagnóstico
 UI -> Controller: 2. iniciarDiagnostico(veiculoId)
 Controller -> DB: 3. buscarVeiculo(veiculoId)
@@ -132,5 +132,4 @@ Cliente -> UI: 11. Confirmar salvamento
 UI -> Controller: 12. salvarDiagnostico()
 Controller -> Carro: 13. realizarCheckup()
 Carro --> Controller: 14. statusCheckup
-
 Controller -> DB: 15. salvarDiagnostico(resultado)
