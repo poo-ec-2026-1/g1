@@ -30,7 +30,7 @@ public class InterfaceApp {
 
     private static void exibirBoasVindas() {
         System.out.println("============================================================");
-        System.out.println("           --- BEM-VINDO AO AUTOTECH CARE ---              ");
+        System.out.println("           ---- BEM-VINDO AO AUTOTECH CARE ----              ");
         System.out.println("     Gestão Automotiva Inteligente | Versão 1.0            ");
         System.out.println("============================================================");
         System.out.println("Olá! Vamos começar o seu atendimento.");
@@ -232,7 +232,7 @@ public class InterfaceApp {
     private static double lerDoubleSeguro() {
         while (true) {
             try {
-                // Aceita tanto vírgula quanto ponto como separador decimal
+                
                 double valor = Double.parseDouble(
                         scanner.nextLine().trim().replace(",", ".")
                 );
