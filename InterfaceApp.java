@@ -42,7 +42,7 @@ public class InterfaceApp {
 
 
     private static Cliente cadastrarCliente() {
-        System.out.println("--- DADOS DO CLIENTE ---");
+        System.out.println("---- DADOS DO CLIENTE ----");
 
         System.out.print("Digite seu nome: ");
         String nome = scanner.nextLine().trim();
@@ -62,7 +62,7 @@ public class InterfaceApp {
 
 
     private static Carro cadastrarVeiculo() {
-        System.out.println("--- DADOS DO VEÍCULO ---");
+        System.out.println("---- DADOS DO VEÍCULO ----");
 
         System.out.print("Modelo do veículo (ex: Fiat Argo 2022): ");
         String modelo = scanner.nextLine().trim();
@@ -103,7 +103,7 @@ public class InterfaceApp {
     //  COLETA DE SINTOMAS
 
     private static String coletarSintoma(Cliente cliente, Carro carro) {
-        System.out.println("--- DIAGNÓSTICO DO VEÍCULO ---");
+        System.out.println("---- DIAGNÓSTICO DO VEÍCULO ----");
         System.out.println("Cliente : " + cliente.getNome());
         System.out.println("Veículo : " + carro.getModelo() + " (" + carro.getPlaca() + ")");
         System.out.println();
@@ -184,13 +184,13 @@ public class InterfaceApp {
 
 
     private static void exibirCheckupCompleto(Carro carro) {
-        System.out.println("\n--- CHECKUP COMPLETO ---");
+        System.out.println("\n---- CHECKUP COMPLETO ----");
 
         // Array polimórfico com o veículo cadastrado (demonstração da AT-05-07)
         IVerificavel[] componentesParaRevisao = new IVerificavel[1];
         componentesParaRevisao[0] = (IVerificavel) carro;
 
-        System.out.println("--- INICIANDO DIAGNÓSTICO DO VEÍCULO ---");
+        System.out.println("---- INICIANDO DIAGNÓSTICO DO VEÍCULO ----");
         for (IVerificavel item : componentesParaRevisao) {
             System.out.println(item.realizarCheckup());
             System.out.println("----------------------------------------");
@@ -201,7 +201,7 @@ public class InterfaceApp {
     //  EXIBIÇÃO DE DADOS DO CLIENTE
 
     private static void exibirDadosCliente(Cliente cliente) {
-        System.out.println("\n--- PERFIL DO CLIENTE ---");
+        System.out.println("\n---- PERFIL DO CLIENTE ----");
         System.out.println("Nome     : " + cliente.getNome());
         System.out.println("Telefone : " + cliente.getTelefone());
         System.out.println("Veículos cadastrados: " + cliente.getVeiculos().size());
