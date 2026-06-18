@@ -1,7 +1,3 @@
-/**
- * Classe abstrata que representa um veículo genérico no sistema AutoTech Care.
- * Serve como classe mãe para CarroBateria e CarroMotor.
- */
 public abstract class Carro {
 
     protected String modelo;
@@ -20,9 +16,5 @@ public abstract class Carro {
         return placa;
     }
 
-    /**
-     * Método abstrato que cada subclasse deve implementar
-     * para descrever o problema atual do veículo.
-     */
     public abstract void apresentarProblema();
 }
