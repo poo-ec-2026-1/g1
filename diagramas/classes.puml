@@ -1,0 +1,52 @@
+// A. Diagrama de Classes: utilizando a hierarquia que definimos (Herança e Interface).
+@startuml
+title Diagrama de Classes - AutoTech Care
+left to right direction
+
+class Cliente {
+    - nome: String
+    - telefone: String
+    + adicionarVeiculo(carro: Carro): void
+}
+
+abstract class Carro {
+    # modelo: String
+    # placa: String
+}
+
+class CarroBateria {
+    - vidaUtilMeses: int
+    + realizarCheckup(): String
+}
+
+class CarroMotor {
+    - nivelOleo: double
+    + realizarCheckup(): String
+}
+
+interface IVerificavel {
+    + realizarCheckup(): String
+}
+
+class HistoricoManutencao {
+    - data: Date
+    - descricao: String
+    - carro: Carro
+    + gerarRelatorio(): void
+}
+
+class DiagnosticoIA {
+    - sintomaRelatado: String
+    + processarSintomas(): String
+}
+
+' Relações estruturais
+Cliente "1" --> "*" Carro : possui
+Carro <|-- CarroBateria
+Carro <|-- CarroMotor
+IVerificavel <|.. CarroBateria
+IVerificavel <|.. CarroMotor
+
+HistoricoManutencao "*" --> "1" Carro : registrado_para
+HistoricoManutencao "1" --> "1" DiagnosticoIA : gera_resultado
+@enduml

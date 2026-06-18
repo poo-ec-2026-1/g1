@@ -1,0 +1,21 @@
+// B. Diagrama de Sequência (Caso de Uso: Diagnóstico): este diagrama mostra a "conversa" entre os objetos quando o usuário pede um diagnóstico.
+@startuml
+actor Cliente
+participant "InterfaceApp" as UI
+participant "DiagnosticoIA" as IA
+participant "HistoricoManutencao" as Hist
+
+Cliente -> UI: Relata sintoma ("Bateria fraca")
+UI -> IA: processarSintomas("Bateria fraca")
+activate IA
+IA --> UI: retorna "Trocar Bateria (Probabilidade 90%)"
+deactivate IA
+
+UI -> Hist: new HistoricoManutencao(Date, "Troca Sugerida")
+activate Hist
+Hist -> Hist: vincularAoCarro()
+Hist --> UI: Confirmação de salvamento
+deactivate Hist
+
+UI -> Cliente: Exibe Diagnóstico e Salva no Histórico
+@enduml
