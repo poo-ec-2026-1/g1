@@ -127,14 +127,15 @@ public class InterfaceApp {
         System.out.println("============================================================");
         System.out.println("              RESULTADO DO DIAGNÓSTICO                     ");
         System.out.println("============================================================");
-        System.out.println(diagnostico.processarSintomas());
+        String resultado = diagnostico.processarSintomas();
+        System.out.println(resultado);
         System.out.println("------------------------------------------------------------");
 
         // Registrar no histórico de manutenção
         HistoricoManutencao registro = new HistoricoManutencao(
                 new Date(),
-                "Diagnóstico inicial via IA - sintoma: " + diagnostico.processarSintomas().split("\n")[0],
-                carro
+        "Diagnóstico inicial via IA - sintoma: " + resultado.split("\n")[0],
+        carro
         );
 
         System.out.println("\n[Histórico] Atendimento salvo:");
