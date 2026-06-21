@@ -4,42 +4,47 @@ Aplicação robusta desenvolvida 100% em Java que utiliza os pilares de POO (Her
 
 ---
 
-## 1. Documentação do Projeto
+## 1. Introdução e Justificativa
 
-<details>
-<summary><b>Seção 1: Introdução e Justificativa (Clique para expandir)</b></summary>
+### 1.1 Contextualização e Descrição do Problema
+O setor automotivo depende cada vez mais de organização, agilidade e histórico confiável dos veículos atendidos. Em oficinas mecânicas, é comum que as informações do cliente e do automóvel fiquem distribuídas em anotações manuais, planilhas ou mensagens informais. Isso dificulta o acompanhamento de manutenções, revisões e falhas recorrentes, além de reforçar a cultura de um serviço estritamente situacional, onde o proprietário apenas procura o mecânico em casos de pane.
 
-### 1.1 Contextualização e Problema
-O setor automotivo sofre com a falta de histórico unificado de manutenção em oficinas, gerando perda de dados técnicos e atrasos. A ausência de uma cultura preventiva faz com que motoristas sofram panes graves que afetam a segurança e o orçamento.
+Atualmente, muitos gestores enfrentam sérias dificuldades para registrar e recuperar dados críticos (como histórico de danos anteriores e especificações de cada modelo). A ausência de um controle unificado causa perda de informações, atrasos no atendimento e impede a identificação de padrões de defeito. Quando a análise preventiva é negligenciada, o cliente continua rodando até que ocorra uma quebra grave, afetando diretamente dois pontos sensíveis: a segurança da vida e o bolso do proprietário.
 
 ### 1.2 Motivação e Justificativa
-O **AutoTech Care** centraliza dados cadastrais e de serviços, aplicando uma IA simulada para processar sintomas relatados. Isso transforma o atendimento reativo em preventivo, garantindo eficiência para a oficina e previsibilidade financeira para o condutor.
+Este projeto é motivado pela oportunidade de transformar a postura reativa do mercado em uma abordagem preventiva e estratégica. A criação de uma aplicação Java justifica-se pelo seu impacto prático imediato na rotina de colaboradores e clientes de oficinas mecânicas. 
 
-### 1.3 Objetivos
-* **Geral:** Desenvolver um ecossistema Java de gestão mecânica com diagnósticos preditivos via IA simulada.
-* **Específicos:** Cadastrar clientes e veículos; manter histórico cronológico; integrar mecanismo de análise inteligente; automatizar alertas de retorno.
+Ao unificar o cadastro de usuários e frotas a uma estrutura que analisa sintomas, o sistema ajuda a prever falhas lógicas e estruturais antes que elas aconteçam. Para a oficina, isso representa controle operacional e fidelização; para o cliente, resulta em economia, previsibilidade e preservação do patrimônio.
+
+### 1.3 Objetivos do Sistema
+* **Objetivo Geral:** Desenvolver um aplicativo em Java voltado para a gestão de oficinas mecânicas, permitindo o cadastro e o acompanhamento do histórico de veículos e clientes através de uma inteligência artificial simulada para identificar possíveis falhas futuras com base nas características e no comportamento de cada automóvel.
+* **Objetivos Específicos:** * Cadastrar de forma estruturada os dados do cliente (nome, telefone, CPF) e do veículo (placa, modelo, motorização, quilometragem e estilo de uso).
+  * Manter a rastreabilidade histórica de ocorrências e serviços executados em tempo real.
+  * Integrar um mecanismo analítico inteligente para processar sintomas e indicar falhas recorrentes.
+  * Automatizar o aviso proativo e recomendações de retorno ao cliente antes que os problemas se agravem.
 
 ### 1.4 Resultado Esperado
-Mudança na cultura do serviço situacional para o preditivo, gerando relatórios rápidos e redução de falhas de acompanhamento.
-</details>
-
-<details>
-<summary><b>Seção 2: Plano do Projeto e Escopo (Clique para expandir)</b></summary>
-
-### 2.1 Análise de Similares
-* **Drivvo:** Focado em custos e abastecimento, sem análise profunda de sintomas mecânicos.
-* **Carrorama:** Alertas de calendário padrão, sem personalização por modelo.
-* **Engie:** Diagnóstico direto via hardware OBD, exigindo componente físico extra.
-
-### 2.2 Referências Técnicas e Legais
-1.  **LGPD:** Tratamento seguro dos dados cadastrais (Nome, CPF, Telefone).
-2.  **Normas ABNT:** Padronização de relatórios técnicos gerados.
-3.  **Algoritmo de Priorização:** Ordenação de urgência de revisão baseada na quilometragem.
-</details>
+Espera-se que o software mude a cultura do serviço situacional para o preditivo. O sistema deve entregar registros organizados, diagnósticos rápidos de componentes críticos (como motor e bateria) e um acompanhamento transparente que minimize falhas humanas e otimize custos.
 
 ---
 
-## 2. Modelagem e Arquitetura do Sistema
+## 2. Plano do Projeto e Escopo do Sistema
+
+### 2.1 Análise de Produtos Similares do Mercado
+Para balizar o desenvolvimento técnico e os diferenciais do ecossistema, mapeamos três concorrentes diretos:
+* **Drivvo:** Excelente para gestão financeira de custos e abastecimento, mas carece de uma análise lógica estruturada sobre os sintomas mecânicos do veículo.
+* **Carrorama:** Aplicativo focado em alertas de calendário e lembretes de revisão padrão, sem personalização analítica por modelo ou tipo de componente.
+* **Engie:** Realiza o diagnóstico direto do motor via hardware OBD, exigindo um componente físico extra plugado fisicamente ao automóvel.
+
+### 2.2 Referências Técnicas e Legais
+O projeto está estruturado em conformidade com as seguintes diretrizes de engenharia:
+1. **Conformidade com a LGPD:** Tratamento seguro e privacidade dos dados cadastrais (nome, telefone e CPF) presentes na classe de identificação.
+2. **Normas da ABNT:** Padronização rigorosa da documentação técnica e relatórios gerados.
+3. **Algoritmos de Priorização:** Lógica polimórfica para ordenar de forma automatizada a urgência de manutenção com base na quilometragem e severidade de uso do carro.
+
+---
+
+## 3. Modelagem e Arquitetura do Sistema
 
 A modelagem do sistema será composta por:
 
@@ -67,7 +72,7 @@ A modelagem do sistema será composta por:
 
 ---
 
-## 3. Planejamento de Atividades e Equipe
+## 4. Planejamento de Atividades e Equipe
 
 * **Matheus Brandão (Arquiteto):** Documentação, Markdown e modelagem UML (`docs/` e `diagramas/`).
 * **Derick Catissi (Backend):** Estrutura das entidades do domínio, herança e contratos de interface (`src/`).
