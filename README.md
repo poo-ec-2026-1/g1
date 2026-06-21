@@ -4,7 +4,7 @@ Aplicação robusta desenvolvida 100% em Java que utiliza os pilares de POO (Her
 
 ---
 
-## Documentação do Projeto
+## 1. Documentação do Projeto
 
 <details>
 <summary><b>Seção 1: Introdução e Justificativa (Clique para expandir)</b></summary>
@@ -39,7 +39,7 @@ Mudança na cultura do serviço situacional para o preditivo, gerando relatório
 
 ---
 
-## 3. Modelagem e Arquitetura do Sistema
+## 2. Modelagem e Arquitetura do Sistema
 
 A modelagem do sistema será composta por:
 
@@ -67,7 +67,7 @@ A modelagem do sistema será composta por:
 
 ---
 
-## 4. Planejamento de Atividades e Equipe
+## 3. Planejamento de Atividades e Equipe
 
 * **Matheus Brandão (Arquiteto):** Documentação, Markdown e modelagem UML (`docs/` e `diagramas/`).
 * **Derick Catissi (Backend):** Estrutura das entidades do domínio, herança e contratos de interface (`src/`).
