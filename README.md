@@ -18,7 +18,8 @@ Ao unificar o cadastro de usuários e frotas a uma estrutura que analisa sintoma
 
 ### 1.3 Objetivos do Sistema
 * **Objetivo Geral:** Desenvolver um aplicativo em Java voltado para a gestão de oficinas mecânicas, permitindo o cadastro e o acompanhamento do histórico de veículos e clientes através de uma inteligência artificial simulada para identificar possíveis falhas futuras com base nas características e no comportamento de cada automóvel.
-* **Objetivos Específicos:** * Cadastrar de forma estruturada os dados do cliente (nome, telefone, CPF) e do veículo (placa, modelo, motorização, quilometragem e estilo de uso).
+* **Objetivos Específicos:**
+  * Cadastrar de forma estruturada os dados do cliente (nome, telefone, CPF) e do veículo (placa, modelo, motorização, quilometragem e estilo de uso).
   * Manter a rastreabilidade histórica de ocorrências e serviços executados em tempo real.
   * Integrar um mecanismo analítico inteligente para processar sintomas e indicar falhas recorrentes.
   * Automatizar o aviso proativo e recomendações de retorno ao cliente antes que os problemas se agravem.
@@ -78,4 +79,4 @@ A modelagem do sistema será composta por:
 * **Derick Catissi (Backend):** Estrutura das entidades do domínio, herança e contratos de interface (`src/`).
 * **Pedro Victor (Frontend):** Interface de Linha de Comando (CLI), captura de inputs via `Scanner` e fluxo de menus.
 * **Breno Cordeiro (QA/Testes):** Elaboração da suíte de testes automatizados e validação de polimorfismo.
-* **Henrique Brito (Líder Técnico):** Configuração de ambiente, code review de Pull Requests e gerência da `main`.
+* **Henrique Brito (Líder Técnico):** Configuração de ambiente, code review de Pull Requests e gerência da brach`main`.
