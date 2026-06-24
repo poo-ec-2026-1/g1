@@ -1,6 +1,51 @@
 # AutoTech Care - APP de Gestão Automotiva Inteligente
 
-## Modelagem inicial:
+Aplicação robusta desenvolvida 100% em Java que utiliza os pilares de POO (Herança, Polimorfismo e Interfaces) para transformar a manutenção veicular corretiva em preventiva.
+
+---
+
+## 1. Introdução e Justificativa
+
+### 1.1 Contextualização e Descrição do Problema
+O setor automotivo depende cada vez mais de organização, agilidade e histórico confiável dos veículos atendidos. Em oficinas mecânicas, é comum que as informações do cliente e do automóvel fiquem distribuídas em anotações manuais, planilhas ou mensagens informais. Isso dificulta o acompanhamento de manutenções, revisões e falhas recorrentes, além de reforçar a cultura de um serviço estritamente situacional, onde o proprietário apenas procura o mecânico em casos de pane.
+
+Atualmente, muitos gestores enfrentam sérias dificuldades para registrar e recuperar dados críticos (como histórico de danos anteriores e especificações de cada modelo). A ausência de um controle unificado causa perda de informações, atrasos no atendimento e impede a identificação de padrões de defeito. Quando a análise preventiva é negligenciada, o cliente continua rodando até que ocorra uma quebra grave, afetando diretamente dois pontos sensíveis: a segurança da vida e o bolso do proprietário.
+
+### 1.2 Motivação e Justificativa
+Este projeto é motivado pela oportunidade de transformar a postura reativa do mercado em uma abordagem preventiva e estratégica. A criação de uma aplicação Java justifica-se pelo seu impacto prático imediato na rotina de colaboradores e clientes de oficinas mecânicas. 
+
+Ao unificar o cadastro de usuários e frotas a uma estrutura que analisa sintomas, o sistema ajuda a prever falhas lógicas e estruturais antes que elas aconteçam. Para a oficina, isso representa controle operacional e fidelização; para o cliente, resulta em economia, previsibilidade e preservação do patrimônio.
+
+### 1.3 Objetivos do Sistema
+* **Objetivo Geral:** Desenvolver um aplicativo em Java voltado para a gestão de oficinas mecânicas, permitindo o cadastro e o acompanhamento do histórico de veículos e clientes através de uma inteligência artificial simulada para identificar possíveis falhas futuras com base nas características e no comportamento de cada automóvel.
+* **Objetivos Específicos:**
+  * Cadastrar de forma estruturada os dados do cliente (nome, telefone, CPF) e do veículo (placa, modelo, motorização, quilometragem e estilo de uso).
+  * Manter a rastreabilidade histórica de ocorrências e serviços executados em tempo real.
+  * Integrar um mecanismo analítico inteligente para processar sintomas e indicar falhas recorrentes.
+  * Automatizar o aviso proativo e recomendações de retorno ao cliente antes que os problemas se agravem.
+
+### 1.4 Resultado Esperado
+Espera-se que o software mude a cultura do serviço situacional para o preditivo. O sistema deve entregar registros organizados, diagnósticos rápidos de componentes críticos (como motor e bateria) e um acompanhamento transparente que minimize falhas humanas e otimize custos.
+
+---
+
+## 2. Plano do Projeto e Escopo do Sistema
+
+### 2.1 Análise de Produtos Similares do Mercado
+Para balizar o desenvolvimento técnico e os diferenciais do ecossistema, mapeamos três concorrentes diretos:
+* **Drivvo:** Excelente para gestão financeira de custos e abastecimento, mas carece de uma análise lógica estruturada sobre os sintomas mecânicos do veículo.
+* **Carrorama:** Aplicativo focado em alertas de calendário e lembretes de revisão padrão, sem personalização analítica por modelo ou tipo de componente.
+* **Engie:** Realiza o diagnóstico direto do motor via hardware OBD, exigindo um componente físico extra plugado fisicamente ao automóvel.
+
+### 2.2 Referências Técnicas e Legais
+O projeto está estruturado em conformidade com as seguintes diretrizes de engenharia:
+1. **Conformidade com a LGPD:** Tratamento seguro e privacidade dos dados cadastrais (nome, telefone e CPF) presentes na classe de identificação.
+2. **Normas da ABNT:** Padronização rigorosa da documentação técnica e relatórios gerados.
+3. **Algoritmos de Priorização:** Lógica polimórfica para ordenar de forma automatizada a urgência de manutenção com base na quilometragem e severidade de uso do carro.
+
+---
+
+## 3. Modelagem e Arquitetura do Sistema
 
 A modelagem do sistema será composta por:
 
@@ -25,3 +70,13 @@ A modelagem do sistema será composta por:
 *Primeira versão do diagrama:
 
 ![Diagrama de Caso de Uso](https://www.plantuml.com/plantuml/dpng/JSunIaD140RWVaynl4gB52RMah22MWX2JFfXtoGPcEp2p6oXuc4yW5MEy2xc9kJ9w_w1x_-PfJcgrwC4ePs35r3U7nnwLahE9GTCNXIwA4pP2MvUIxkvrMuxG8COmbbYtWj1jwfUtYaT8A8Ih3_CwTZ1Lm2eHWcjaOWzcYigR6duJLNAPMSJxwPgNOGJUrEFZFiydCmv5NXPNV5yYfz8AITk-8rqnm8zmSRgyACyZY-cVijMKVWJ5PxPV3XfspwNOibMnT6khVlm7KA4sUpXyj-OvlzfCQP6bvJxUfG_)
+
+---
+
+## 4. Planejamento de Atividades e Equipe
+
+* **Matheus Brandão (Arquiteto):** Documentação, Markdown e modelagem UML (`docs/` e `diagramas/`).
+* **Derick Catissi (Backend):** Estrutura das entidades do domínio, herança e contratos de interface (`src/`).
+* **Pedro Victor (Frontend):** Interface de Linha de Comando (CLI), captura de inputs via `Scanner` e fluxo de menus.
+* **Breno Cordeiro (QA/Testes):** Elaboração da suíte de testes automatizados e validação de polimorfismo.
+* **Henrique Brito (Líder Técnico):** Configuração de ambiente, code review de Pull Requests e gerência da brach`main`.
