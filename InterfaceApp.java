@@ -4,7 +4,10 @@ import java.util.Date;
 public class InterfaceApp {
 
     private static final Scanner scanner = new Scanner(System.in);
+    private static final String LINHA = "============================================================";
+    private static final String SUBLINHA = "------------------------------------------------------------";
 
+    // fluxo incial 
 
     public static void main(String[] args) {
         exibirBoasVindas();
@@ -213,38 +216,28 @@ public class InterfaceApp {
         System.out.println();
     }
 
-    //  UTILITÁRIOS DE LEITURA SEGURA
+  // ============ UTILITÁRIOS DE LEITURA SEGURA============
 
-    private static int lerInteiroSeguro() {
-        while (true) {
-            try {
-                int valor = Integer.parseInt(scanner.nextLine().trim());
-                if (valor < 0) {
-                    System.out.print("Por favor, informe um valor positivo: ");
-                    continue;
-                }
-                return valor;
-            } catch (NumberFormatException e) {
-                System.out.print("Entrada inválida. Digite um número inteiro: ");
-            }
-        }
+    private static String lerTexto(String prompt) {
+        System.out.print(prompt);
+        return scanner.nextLine().trim();
     }
 
-    private static double lerDoubleSeguro() {
+    private static double lerNumero(String prompt, double min, double max, String msgErro) {
+        System.out.print(prompt);
         while (true) {
             try {
-                
-                double valor = Double.parseDouble(
-                        scanner.nextLine().trim().replace(",", ".")
-                );
-                if (valor < 0 || valor > 100) {
-                    System.out.print("Informe um valor entre 0 e 100: ");
+                double valor = Double.parseDouble(scanner.nextLine().trim().replace(",", "."));
+                if (valor < min || valor > max) {
+                    System.out.print(msgErro);
                     continue;
                 }
                 return valor;
             } catch (NumberFormatException e) {
-                System.out.print("Entrada inválida. Digite um número (ex: 85.5): ");
+                System.out.print("Entrada inválida. " + msgErro);
             }
         }
     }
 }
+
+Quer que eu também aplique mudanças semelhantes nas outras classes (Cliente, Carro, DiagnosticoIA etc.)?
