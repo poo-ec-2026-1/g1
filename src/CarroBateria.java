@@ -1,3 +1,5 @@
+package src;
+
 public class CarroBateria extends Carro implements IVerificavel {
 
     private int vidaUtilMeses;

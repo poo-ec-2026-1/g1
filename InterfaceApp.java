@@ -1,3 +1,5 @@
+import src.*;
+
 import java.util.Scanner;
 import java.util.Date;
 
@@ -6,8 +8,6 @@ public class InterfaceApp {
     private static final Scanner scanner = new Scanner(System.in);
     private static final String LINHA = "============================================================";
     private static final String SUBLINHA = "------------------------------------------------------------";
-
-    // fluxo incial 
 
     public static void main(String[] args) {
         exibirBoasVindas();
@@ -29,20 +29,14 @@ public class InterfaceApp {
         scanner.close();
     }
 
-    //  TELA DE BOAS-VINDAS
-
     private static void exibirBoasVindas() {
-        System.out.println("============================================================");
-        System.out.println("           ---- BEM-VINDO AO AUTOTECH CARE ----              ");
-        System.out.println("     Gestão Automotiva Inteligente | Versão 1.0            ");
-        System.out.println("============================================================");
+        System.out.println(LINHA);
+        System.out.println("            ---- BEM-VINDO AO AUTOTECH CARE ----             ");
+        System.out.println("      Gestão Automotiva Inteligente | Versão 1.0             ");
+        System.out.println(LINHA);
         System.out.println("Olá! Vamos começar o seu atendimento.");
         System.out.println();
     }
-
-
-    //  CADASTRO DE CLIENTE
-
 
     private static Cliente cadastrarCliente() {
         System.out.println("---- DADOS DO CLIENTE ----");
@@ -60,9 +54,6 @@ public class InterfaceApp {
 
         return cliente;
     }
-
-    //  CADASTRO DE VEÍCULO
-
 
     private static Carro cadastrarVeiculo() {
         System.out.println("---- DADOS DO VEÍCULO ----");
@@ -103,8 +94,6 @@ public class InterfaceApp {
         return carro;
     }
 
-    //  COLETA DE SINTOMAS
-
     private static String coletarSintoma(Cliente cliente, Carro carro) {
         System.out.println("---- DIAGNÓSTICO DO VEÍCULO ----");
         System.out.println("Cliente : " + cliente.getNome());
@@ -124,17 +113,14 @@ public class InterfaceApp {
         return sintoma;
     }
 
-    //  EXIBIÇÃO DO DIAGNÓSTICO
-
     private static void exibirDiagnostico(DiagnosticoIA diagnostico, Carro carro, Cliente cliente) {
-        System.out.println("============================================================");
-        System.out.println("              RESULTADO DO DIAGNÓSTICO                     ");
-        System.out.println("============================================================");
+        System.out.println(LINHA);
+        System.out.println("               RESULTADO DO DIAGNÓSTICO                      ");
+        System.out.println(LINHA);
         String resultado = diagnostico.processarSintomas();
         System.out.println(resultado);
-        System.out.println("------------------------------------------------------------");
+        System.out.println(SUBLINHA);
 
-        // Registrar no histórico de manutenção
         HistoricoManutencao registro = new HistoricoManutencao(
                 new Date(),
         "Diagnóstico inicial via IA - sintoma: " + resultado.split("\n")[0],
@@ -146,15 +132,13 @@ public class InterfaceApp {
         System.out.println();
     }
 
-    //  MENU PÓS-DIAGNÓSTICO
-
     private static void menuPosDiagnostico(Cliente cliente, Carro carro, String sintoma) {
         boolean continuar = true;
 
         while (continuar) {
-            System.out.println("============================================================");
-            System.out.println("                      MENU PRINCIPAL                       ");
-            System.out.println("============================================================");
+            System.out.println(LINHA);
+            System.out.println("                     MENU PRINCIPAL                        ");
+            System.out.println(LINHA);
             System.out.println("  [1] Ver checkup completo do veículo");
             System.out.println("  [2] Registrar novo sintoma");
             System.out.println("  [3] Ver dados do cliente");
@@ -184,13 +168,9 @@ public class InterfaceApp {
         }
     }
 
-    //  EXIBIÇÃO DE CHECKUP COMPLETO
-
-
     private static void exibirCheckupCompleto(Carro carro) {
         System.out.println("\n---- CHECKUP COMPLETO ----");
 
-        // Array polimórfico com o veículo cadastrado (demonstração da AT-05-07)
         IVerificavel[] componentesParaRevisao = new IVerificavel[1];
         componentesParaRevisao[0] = (IVerificavel) carro;
 
@@ -201,8 +181,6 @@ public class InterfaceApp {
         }
         System.out.println();
     }
-
-    //  EXIBIÇÃO DE DADOS DO CLIENTE
 
     private static void exibirDadosCliente(Cliente cliente) {
         System.out.println("\n---- PERFIL DO CLIENTE ----");
@@ -215,8 +193,6 @@ public class InterfaceApp {
         }
         System.out.println();
     }
-
-  // ============ UTILITÁRIOS DE LEITURA SEGURA============
 
     private static String lerTexto(String prompt) {
         System.out.print(prompt);
@@ -238,6 +214,24 @@ public class InterfaceApp {
             }
         }
     }
-}
 
-Quer que eu também aplique mudanças semelhantes nas outras classes (Cliente, Carro, DiagnosticoIA etc.)?
+    private static int lerInteiroSeguro() {
+        while (true) {
+            try {
+                return Integer.parseInt(scanner.nextLine().trim());
+            } catch (NumberFormatException e) {
+                System.out.print("Entrada inválida! Por favor, digite um número inteiro: ");
+            }
+        }
+    }
+
+    private static double lerDoubleSeguro() {
+        while (true) {
+            try {
+                return Double.parseDouble(scanner.nextLine().trim().replace(",", "."));
+            } catch (NumberFormatException e) {
+                System.out.print("Entrada inválida! Por favor, digite um número (ex: 85.5): ");
+            }
+        }
+    }
+}
