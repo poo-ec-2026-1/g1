@@ -1,3 +1,5 @@
+package src;
+
 public class DiagnosticoIA {
 
     private String sintomaRelatado;
